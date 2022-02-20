@@ -1,6 +1,5 @@
 package it.unimi.di.prog2.esame.presenter;
 
-import java.util.Comparator;
 import java.util.List;
 
 import it.unimi.di.prog2.esame.model.EuroModel;

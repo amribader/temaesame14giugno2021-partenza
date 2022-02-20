@@ -3,6 +3,8 @@ package it.unimi.di.prog2.esame.presenter;
 import java.util.Comparator;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 import it.unimi.di.prog2.esame.model.EuroModel;
 import it.unimi.di.prog2.esame.model.Observer;
 import it.unimi.di.prog2.esame.model.Squadra;
@@ -12,11 +14,8 @@ import it.unimi.di.prog2.esame.view.GeneralDisplayView;
 public class RankingPresenter implements Observer<List<Squadra>> {
 
     private final GeneralDisplayView view;
-    private final EuroModel model;
-
-    public RankingPresenter(GeneralDisplayView view, EuroModel model) {
+    public RankingPresenter(GeneralDisplayView view, @NotNull EuroModel model) {
         this.view = view;
-        this.model = model;
         model.addObserver(this);
     }
 
