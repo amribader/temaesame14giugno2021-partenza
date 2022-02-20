@@ -22,7 +22,7 @@ public class MatchPresenter implements Observer<List<Squadra>> {
     this.model = model;
     view.addHandlers(this);
     model.addObserver(this);
-    //TODO completare
+    //TO-DO completare
   }
 
 
@@ -30,7 +30,7 @@ public class MatchPresenter implements Observer<List<Squadra>> {
     System.out.println(String.format("Partita %d: la squadra %d ha fatto un goal", gameNumber, i));
     model.goal(gameNumber+""+i);
     
-    //TODO completare
+    //TO-DO completare
   }
 
   @Override

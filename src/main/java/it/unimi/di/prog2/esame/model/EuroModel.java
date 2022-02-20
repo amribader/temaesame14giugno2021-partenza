@@ -19,7 +19,7 @@ public class EuroModel implements Subject<List<Squadra>> {
 
     @Override
     public void notifyObservers() {
-        // TODO Auto-generated method stub
+        // TO-DO Auto-generated method stub
         for (Observer<List<Squadra>> observer : observers) {
             observer.update(this,new ArrayList<>(map.values()));
         }
@@ -27,13 +27,13 @@ public class EuroModel implements Subject<List<Squadra>> {
 
     @Override
     public void addObserver(Observer<List<Squadra>> obs) {
-        // TODO Auto-generated method stub
+        // TO-DO Auto-generated method stub
         observers.add(obs);
     }
 
     @Override
     public List<Squadra> getState() {
-        // TODO Auto-generated method stub
+        // TO-DO Auto-generated method stub
         return new ArrayList<>(map.values());
     }
 

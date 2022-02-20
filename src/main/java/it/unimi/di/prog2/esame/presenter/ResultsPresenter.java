@@ -21,7 +21,7 @@ public class ResultsPresenter implements Observer<List<Squadra>>{
 
     @Override
     public void update(Subject<List<Squadra>> subject, List<Squadra> state) {
-        // TODO Auto-generated method stub
+        // TO-DO Auto-generated method stub
         for (int i = 0; i < 2; i++) {
             Squadra S1 = model.getSquadra(i+""+0);
             Squadra S2 = model.getSquadra(i+""+1);

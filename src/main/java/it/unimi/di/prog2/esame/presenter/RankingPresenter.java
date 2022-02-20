@@ -21,7 +21,7 @@ public class RankingPresenter implements Observer<List<Squadra>> {
 
     @Override
     public void update(Subject<List<Squadra>> subject, List<Squadra> state) {
-        // TODO Auto-generated method stub
+        // TO-DO Auto-generated method stub
         state.sort(Comparator.comparing(Squadra::getWin).reversed());
 
         //model.diffGol()
