@@ -1,6 +1,9 @@
 package it.unimi.di.prog2.esame;
 
+import it.unimi.di.prog2.esame.model.EuroModel;
 import it.unimi.di.prog2.esame.presenter.MatchPresenter;
+import it.unimi.di.prog2.esame.presenter.RankingPresenter;
+import it.unimi.di.prog2.esame.presenter.ResultsPresenter;
 import it.unimi.di.prog2.esame.view.MatchView;
 import it.unimi.di.prog2.esame.view.GeneralDisplayView;
 import javafx.application.Application;
@@ -26,6 +29,8 @@ public class Main extends Application {
 
     primaryStage.setTitle("Euro 2020");
 
+    EuroModel model = new EuroModel();
+
     MatchView[] games = new MatchView[2];
 
     GeneralDisplayView display = new GeneralDisplayView(2);
@@ -44,9 +49,11 @@ public class Main extends Application {
     GridPane.setColumnSpan(classifica, GridPane.REMAINING);
 
 
-    new MatchPresenter(games[0], 0);
-    new MatchPresenter(games[1], 1);
+    new MatchPresenter(games[0], 0, model);
+    new MatchPresenter(games[1], 1, model);
 
+    new RankingPresenter(classifica,model);
+    new ResultsPresenter(display,model);
     Scene scene = new Scene(gridPane);
 
     primaryStage.setScene(scene);
@@ -54,7 +61,7 @@ public class Main extends Application {
 
     //HINT: una volta definito il modello sarà utile lanciare una notifica in modo che le
     //      viste si aggiornino a stato iniziale
-    //model.notifyObservers();
+    model.notifyObservers();
 
   }
 }
